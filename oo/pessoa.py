@@ -4,7 +4,7 @@ class Pessoa:
         Construtor da classe Pessoa
         :param nome: string
         :param idade: inteiro
-        :param filhos: parâmetro múltiplo, recebe objeto pessoa
+        :param filhos: parâmetro múltiplo, recebe objeto Pessoa
         """
         self.nome = nome
         self.idade = idade
@@ -18,6 +18,9 @@ if __name__ == '__main__':
     print(leticia.cumprimentar())
     print(f'{leticia.nome}, {leticia.idade} anos')
     jeane = Pessoa('Jeane', 50, leticia)
-
+    jeane.sobrenome = 'Santos'
+    print(jeane.__dict__)
+    del jeane.sobrenome
+    print(jeane.__dict__)
     for f in jeane.filhos:
         print(f.nome)
