@@ -108,16 +108,47 @@ class Motor:
             self.velocidade = 0
 
 
+DIRECOES = ['Norte', 'Leste', 'Sul', 'Oeste']
+
 class Direcao:
-    DIRECOES = ['Norte', 'Leste', 'Sul', 'Oeste']
     def __init__(self):
         self.dir_posicao = 0
-        self.valor = self.DIRECOES[self.dir_posicao]
+        self.valor = DIRECOES[self.dir_posicao]
 
     def girar_direita(self):
-        self.dir_posicao = (self.dir_posicao + 1) % len(self.DIRECOES)
-        self.valor = self.DIRECOES[self.dir_posicao]
+        self.dir_posicao = (self.dir_posicao + 1) % len(DIRECOES)
+        self.valor = DIRECOES[self.dir_posicao]
 
     def girar_esquerda(self):
-        self.dir_posicao = (self.dir_posicao - 1) % len(self.DIRECOES)
-        self.valor = self.DIRECOES[self.dir_posicao]
+        self.dir_posicao = (self.dir_posicao - 1) % len(DIRECOES)
+        self.valor = DIRECOES[self.dir_posicao]
+
+
+class Carro:
+    def __init__(self, direcao, motor):
+        """
+        Construtor da Classe Carro
+        :param direcao: objeto do tipo Direcao
+        :param motor: objeto do tipo Motor
+        """
+        self.direcao = direcao
+        self.motor = motor
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+
+    def acelerar(self):
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def calcular_direcao(self):
+        return self.direcao.valor
+
+    def girar_direita(self):
+        self.direcao.girar_direita()
+
+    def girar_esquerda(self):
+        self.direcao.girar_esquerda()
+
