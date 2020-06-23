@@ -1,4 +1,7 @@
 class Pessoa:
+
+    olhos = 2
+
     def __init__(self, nome = None, idade = None, *filhos):
         """
         Construtor da classe Pessoa
@@ -24,3 +27,9 @@ if __name__ == '__main__':
     print(jeane.__dict__)
     for f in jeane.filhos:
         print(f.nome)
+
+    print(Pessoa.olhos)
+    print(jeane.olhos)
+    jeane.olhos = 1
+    print(jeane.__dict__)
+    print(jeane.olhos)
