@@ -25,11 +25,15 @@ class Pessoa:
         return f'{cls} - olhos {cls.olhos}'
 
 
+class Mulher(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
     leticia = Pessoa('Letícia', 22)
     print(leticia.cumprimentar())
     print(f'{leticia.nome}, {leticia.idade} anos')
-    jeane = Pessoa('Jeane', 50, leticia)
+    jeane = Mulher('Jeane', 50, leticia)
     jeane.sobrenome = 'Santos'
     print(jeane.__dict__)
     del jeane.sobrenome
@@ -44,3 +48,7 @@ if __name__ == '__main__':
     print(jeane.olhos)
     print(Pessoa.metodo_estatico(), leticia.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), leticia.nome_e_atributos_de_classe())
+
+    print(isinstance(jeane,Pessoa))
+    print(isinstance(jeane,Mulher))
+    print(isinstance(leticia,Mulher))
