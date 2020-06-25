@@ -28,7 +28,7 @@ class Pessoa:
 class Mulher(Pessoa):
     def cumprimentar(self):
         cumprimentar_pai = super().cumprimentar()
-        return f'{cumprimentar_pai}, aperto de mão.'
+        return f'{cumprimentar_pai}, beijo.'
 
 
 class Mutante(Pessoa):
